@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        header,
+        #intro {
+            height: 100%;
+        }
+
+        #intro {
+            background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .top-nav-collapse {
+            background-color: #24355C;
+        }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!--Main Navigation-->
+<header>
+
+    <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light blue lighten-3 fixed-top">
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto smooth-scroll">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                {% if session['logged_in']!=True %}
+            <li class="nav-item">
+                <a class="nav-link" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign Up</a>
+            </li>
+            {% endif %}
+            {% if session['logged_in']==True %}
+            <li class="nav-item">
+                <a class="nav-link" href="/signout"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">Account</a>
+                <div class="dropdown-menu dropdown-show dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <a class="dropdown-item" href="/profile/completition">Completition</a>
+                    <a class="dropdown-item" href="/post">Post</a>
+                </div>
+            </li>
+            {% endif %}
+            
+            </ul>
+        
+</div>
+         
+
+        
+        <!-- Links -->
+
+        
+    </div>
+    <!-- Collapsible content -->
+  </div>
+</nav>
+<!--/.Navbar-->
+
+    <!--Mask-->
+<div  id="intro" class="view hm-black-strong">
+        
+    <div class="container-fluid full-bg-img d-flex align-items-center justify-content-center">
+
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-md-10 text-center">
+
+                <!-- Heading -->
+                <h2 class="display-3 font-bold white-text mb-2">My Portfolio</h2>
+
+                <!-- Divider -->
+                <hr class="hr-light">
+
+                <!-- Description -->
+                <h4 class="white-text my-4">Welcome to my site.This site will explain my works I have done.</h4>
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!--/.Mask-->
+
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main class="mt-5">
+    <div class="container">
+
+        <!--Section: Best Features-->
+<section id="introduction" class="text-center">
+    <i class="fa fa-book ms-10"></i>
+    <h2 class="my-4" style="text-align:center">Welcome Amigos!</h2>
+    <h5 class="ml-4" style="text-align:center">This is a trip to introduce my work to you my friends;)</h5>
+ 
+</section>
+<!--Section: Best Features-->
+
+        <hr class="my-5">
+
+        <!--Section: Examples-->
+<section id="posts" class="text-center">
+    <h2 class="my-4">What's new?</h2>
+        
+        <div class="card">
+            <div class="card-header blue">{{posts[0]}}</div>
+            
+        <div class="card-body light-grey">
+            <p class="card-text">{{posts[1]}}</p>
+            {% if session['logged_in']==True %}
+            <a href="/post" class="btn-floating peach-gradient" style="margin-left:900px"><i class="fa fa-plus"></i></a>
+            {% endif %}
+            
+            
+        </div>  
+        </div>      
+        
+  
+
+</section>
+<!--Section: Examples-->
+                            
+        <hr class="my-5">
+
+        <!--Section: Gallery-->
+<section id="gallery">
+    
+    
+
+</section>
+<!--Section: Gallery-->
+
+        <hr class="my-5">
+
+        <!--Section: Contact-->
+            <section id="contact">
+
+                
+            </section>
+            <!--Section: Contact-->
+
+    </div>
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer class="page-footer blue center-on-small-only unique-color-dark pt-0">
+<div style="background-color:cornflowerblue">
+ <div class="container">
+        <div class="row py-4 d-flex align-items-center">
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0" style="text-color:black">Social Networks:</div>
+        </div>
+ </div>    
+</div>    
+<div class="container">    
+        <div class="row mt-3">
+            <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-r">
+                <h4 class="title">Hello!</h4>
+                <hr class="deep-purple">
+            </div>
+            <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-r">
+                <h4 class="title">Hi!</h4>
+                <hr class="deep-purple">
+            </div>
+        
+        </div>
+</div>        
+    <div class="footer-copyright">
+        <div class="container">
+             © 2018 Copyright: MySite
+        </div>
+    </div>    
+    
+</footer>
+<!--/.Footer-->
+
+
+</body>
+</html>

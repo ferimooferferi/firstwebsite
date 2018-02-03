@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <style>
+     .form-group.required .control-label:before{
+                color: red;
+                content: "*";
+                position: absolute;
+                margin-left: -15px;
+        }
+        </style>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light blue lighten-3 fixed-top">
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto smooth-scroll">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                {% if session['logged_in']!=True %}
+            <li class="nav-item">
+                <a class="nav-link" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign Up</a>
+            </li>
+            {% endif %}
+            {% if session['logged_in']==True %}
+            <li class="nav-item">
+                <a class="nav-link" href="/signout"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">Account</a>
+                <div class="dropdown-menu dropdown-show dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <a class="dropdown-item" href="/profile/completition">Completition</a>
+                    <a class="dropdown-item" href="/post">Post</a>
+                </div>
+            </li>
+            {% endif %}
+            
+            </ul>
+        
+</div>
+         
+
+        
+        <!-- Links -->
+
+        
+    </div>
+    <!-- Collapsible content -->
+  </div>
+</nav>
+<body style="background-color:lightyellow">
+    <div class="container-fluid">
+       <div class="row">
+           <div class="col-md-5 col-md-offset-1" style="margin-top:100px;margin-bottom:100px;height:50px">
+               <div class="card">
+                   <div class="card-body">
+                   <form action="">
+                       <fieldset>
+                       <div class="form-group required">
+                           <div class="col-md-3"><label for="first" class="control-label">First Name:</label></div><div class="col-md-9"><input type="text" required="required" class="form-control" required="required" name="first" ></div>
+                       </div><br><br>
+                       <div class="form-group required">
+                           <div class="col-md-3"><label for="last" class="control-label">Last Name:</label></div><div class="col-md-9"><input type="text" required="required" class="form-control" name="last" ></div>
+                       </div><br><br>
+                       <div class="form-group required">
+                           <div class="col-md-3"><label for="email" class="control-label">E-mail:</label></div><div class="col-md-9"><input type="text" required="required" class="form-control" name="email" ></div>
+                       </div><br><br>
+                       <div class="form-group required">
+                           <div class="col-md-3"><label for="tel" class="control-label">Telephone Number:</label></div><div class="col-md-9"><input type="telephone" required="required" class="form-control" name="tel" ></div>
+                       </div><br><br>
+                        <div class="form-group required">
+                           <div class="col-md-3"><label for="first">Address:</label></div><div class="col-md-9"><input type="textbox" class="form-control" name="address" ></div>
+                       </div><br><br>
+                        <div class="row">
+                                <div class="col-md-6">
+                         <div class="form-group required">
+                            <div class="col-md-3"><label for="age" class="control-label">Age:</label></div>
+                            <div class="col-md-9"><input type="number" required="required" class="form-control" name="age" ></div>
+                         </div>
+                                </div>
+                                <div class="col-md-6 dropdown">
+                                    <div class="form-group required">
+                                     <div class="col-md-3"><label for="sex" class="control-label">Sex:</label></div>
+                                      <div class="col-md-9"><input type="text" required="required" class="form-control dropdown-toggle" data-toggle="dropdown" name="sex">
+                                     
+                                     <ul class="dropdown-menu">
+                                       <li data-value="Male"><a href="#">Male</a></li>
+                                       <li data-value="Female"><a href="#">Female</a></li>
+                                       <li data-value="Other"><a href="#">Other</a></li> 
+                                     </ul>
+                                     </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <br>
+                       <div class="md-form">
+                           <input type="submit" class="btn btn-md btn-success btn-block">
+                       </div>
+                       </fieldset>
+                   </form>
+                   </div> 
+               </div>
+           </div>
+            
+           <div class="col-md-6">
+               <div style="margin-top:220px">
+               <h2 style="text-align:center"><b>Please fill in the form.</b></h2>
+               <p style="text-align:center"><b><i>Fill the remained blank fields to complete the registration.<br>The <span style="color:red">*</span> field needs to be 
+                filled.</i></b></p>
+               </div>
+           </div>
+       </div> 
+    </div>
+</body>
+</html>
